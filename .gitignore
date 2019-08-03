@@ -4,3 +4,6 @@
 PyExifinfo.egg-info/
 pyexifinfo.egg-info/
 .cache/
+build/
+dist/
+.idea/

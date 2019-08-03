@@ -32,41 +32,41 @@ def print_a_header(message="-"):
     print("-".center(60,'-'))
     print()
 
-def check_if_exiftool_is_already_installed():
-    """Requirements
-
-    This function will check if Exiftool is installed
-    on your system
-
-    Return: True if Exiftool is Installed
-            False if not
-    """
-    result = 1;
-    command = ["exiftool", "-ver"]
-
-    with open(os.devnull, "w") as fnull:
-        result = subprocess.call(
-            command,
-            stdout = fnull,
-            stderr = fnull
-        )
-    #Exiftool is not installed
-    if result != 0:
-        print_a_header('Exiftool needs to be installed on your system')
-        print_a_header('Visit http://www.sno.phy.queensu.ca/~phil/exiftool/')
-        return False
-    else:
-        return True
+# def check_if_exiftool_is_already_installed():
+#     """Requirements
+#
+#     This function will check if Exiftool is installed
+#     on your system
+#
+#     Return: True if Exiftool is Installed
+#             False if not
+#     """
+#     result = 1;
+#     command = ["exiftool", "-ver"]
+#
+#     with open(os.devnull, "w") as fnull:
+#         result = subprocess.call(
+#             command,
+#             stdout = fnull,
+#             stderr = fnull
+#         )
+#     #Exiftool is not installed
+#     if result != 0:
+#         print_a_header('Exiftool needs to be installed on your system')
+#         print_a_header('Visit http://www.sno.phy.queensu.ca/~phil/exiftool/')
+#         return False
+#     else:
+#         return True
 
 
 #Begin the installation
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name='pyexifinfo',
-    version='0.4.0',
+    name='pyexifinfo-ivc',
+    version='0.4.0-1',
     description="Simple Metadata extraction using Exiftool",
-    url='https://github.com/guinslym/pyexifinfo',
+    url='https://github.com/ivc-inform/pyexifinfo.git',
     author='Guinslym',
     author_email='guinslym@gmail.com',
     license='GNU GPLv2',
@@ -92,9 +92,9 @@ setup(
 )
 
 
-result = check_if_exiftool_is_already_installed()
-if not result:
-    print_frog()
-    print_a_header('Exiftool needs to be installed on your system')
-    print_a_header('Visit http://www.sno.phy.queensu.ca/~phil/exiftool/')
-    print_frog()
+# result = check_if_exiftool_is_already_installed()
+# if not result:
+#     print_frog()
+#     print_a_header('Exiftool needs to be installed on your system')
+#     print_a_header('Visit http://www.sno.phy.queensu.ca/~phil/exiftool/')
+#     print_frog()
