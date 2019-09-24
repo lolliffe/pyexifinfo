@@ -112,7 +112,7 @@ def get_json(filename):
 
     #Process this function
     filename = os.path.abspath(filename)
-    s = command_line(['exiftool', '-G', '-j', '-sort', filename])
+    s = command_line(['exiftool', '-api', 'largefilesupport=1', '-G', '-j', '-sort', filename])
     if s:
         #convert bytes to string
         s = s.decode('utf-8').rstrip('\r\n')
@@ -135,7 +135,7 @@ def get_csv(filename):
 
     #Process this function
     filename = os.path.abspath(filename)
-    s = command_line(['exiftool', '-G', '-csv', '-sort', filename])
+    s = command_line(['exiftool', '-api', 'largefilesupport=1', '-G', '-csv', '-sort', filename])
     if s:
         #convert bytes to string
         s = s.decode('utf-8')
@@ -159,7 +159,7 @@ def get_xml(filename):
     #Process this function
     filename = os.path.abspath(filename)
 
-    s = command_line(['exiftool', '-G', '-X', '-sort', filename])
+    s = command_line(['exiftool', '-api', 'largefilesupport=1', '-G', '-X', '-sort', filename])
     if s:
         #convert bytes to string
         s = s.decode('utf-8')
